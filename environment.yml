@@ -1,0 +1,13 @@
+name: sphinx
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - sphinx
+  - sphinx-autodoc-typehints
+  - recommonmark
+  - pip
+  - pip:
+    - sphinxcontrib-plantuml
+    - --editable .

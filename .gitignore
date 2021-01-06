@@ -1,0 +1,6 @@
+/docs/*/modules
+/docs/modules
+/html
+/.vscode
+*.egg-info
+__pycache__

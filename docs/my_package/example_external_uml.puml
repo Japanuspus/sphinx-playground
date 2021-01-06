@@ -1,0 +1,37 @@
+
+-: private
+#: protected
++: public 
+
+# Leftmost entity is ordered first, no matter arrow direction
+# --: Vertical. Leftmost is top. This is defaul and may be rendered horizontally
+# -: Horizontal. Leftmost is left
+
+@startuml
+skinparam classBorderColor #7B7859
+skinparam classArrowColor #7B7859
+skinparam classBackgroundColor #A9A57C
+skinparam classAttributeIconSize 0
+hide circle
+
+interface SoilModel_curves {
+    init(tables, geometry, analysis)
+    export_docs(doc_target, displacements)
+
+    get_curves()
+}
+
+interface SoilModel {
+    init(tables, geometry, analysis)
+    export_docs(doc_target, displacements)
+
+    get_rensponse(displacements)
+    get_rensponse_and_gradient(displacements)
+    add_last_response_to_history(t)
+}
+
+note right of SoilModel
+    This interface allows both statefull and 
+    stateless soil models.
+end note
+@enduml
